@@ -1,0 +1,161 @@
+* { box-sizing: border-box; }
+:root {
+  --ink: #344d63;
+  --muted: #71889b;
+  --pink: #9bc9e8;
+  --pink-dark: #79b6dc;
+  --pale: #f8fcff;
+  --line: rgba(121, 182, 220, .25);
+}
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: #fbfdff;
+  font-family: "DM Sans", sans-serif;
+}
+a { color: inherit; }
+.site-header {
+  height: 78px; padding: 0 5.5%;
+  display: flex; align-items: center; justify-content: space-between;
+  position: absolute; z-index: 5; top: 0; left: 0; right: 0;
+}
+.brand {
+  font: 500 27px "Caveat", cursive; text-decoration: none;
+  color: #45677f;
+}
+.brand span { color: var(--pink-dark); }
+nav { display: flex; gap: 30px; }
+nav a { text-decoration: none; font: 16px "Playfair Display", serif; }
+nav a:hover { color: var(--pink-dark); }
+.menu-toggle { display: none; border: 0; background: transparent; color: var(--ink); font-size: 24px; }
+.hero {
+  min-height: 660px; position: relative; overflow: hidden;
+  display: flex; align-items: center; padding: 110px 5.5% 80px;
+  background: radial-gradient(ellipse at 18% 40%, #fff5f5 0, #e7f4fc 45%, #d7ecf8 100%);
+}
+.hero-copy { position: relative; z-index: 2; max-width: 490px; }
+.eyebrow { font-size: 10px; letter-spacing: 3px; color: #6f9fbe; font-weight: 600; }
+.hero h1 {
+  font: 500 clamp(48px, 6.3vw, 82px)/1.06 "Playfair Display", serif;
+  letter-spacing: -2px; margin: 22px 0 14px;
+}
+.hero h1 span { color: var(--pink-dark); }
+.hero-description { font: 22px/1.45 "Playfair Display", serif; margin: 0; color: #58758c; }
+.pill-button {
+  display: inline-flex; align-items: center; gap: 13px;
+  border: 0; border-radius: 999px; padding: 14px 25px;
+  background: var(--pink); color: white; text-decoration: none;
+  font: 15px "Playfair Display", serif; cursor: pointer;
+  transition: transform .2s, background .2s;
+}
+.pill-button:hover { transform: translateY(-2px); background: var(--pink-dark); }
+.hero .pill-button { margin-top: 29px; }
+.hero-photo-wrap {
+  position: absolute; inset: 0 0 0 42%;
+  overflow: hidden; opacity: .94;
+  mask-image: linear-gradient(90deg, transparent 0%, black 22%);
+}
+.hero-photo { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
+.doodle { position: absolute; z-index: 1; color: #a9d5ef; font: 64px "Caveat", cursive; }
+.doodle-one { top: 17%; left: 38%; transform: rotate(-18deg); }
+.doodle-two { top: 24%; right: 7%; transform: rotate(14deg); }
+.doodle-three { bottom: 18%; right: 20%; font-size: 44px; }
+.collections { padding: 86px 5.5% 60px; }
+.section-intro { text-align: center; margin: 0 auto 42px; }
+.section-intro h2, .letter-copy h2 {
+  font: 500 clamp(34px, 4vw, 49px) "Playfair Display", serif; margin: 10px 0;
+}
+.section-intro h2 i { color: var(--pink-dark); }
+.section-intro > p:last-child { color: var(--muted); font-size: 14px; }
+.collection-list { display: grid; gap: 20px; }
+.collection-card {
+  min-height: 245px; position: relative; overflow: hidden;
+  border: 1px solid rgba(255,255,255,.85); border-radius: 28px;
+  background: linear-gradient(100deg, #eaf6fd, #f7fcff);
+  display: grid; grid-template-columns: 37% 63%;
+  box-shadow: 0 12px 35px rgba(92, 145, 180, .09);
+}
+.collection-copy { position: relative; z-index: 2; padding: 38px 20px 34px 42px; align-self: center; }
+.collection-copy h3 { font: 500 clamp(26px, 3vw, 36px) "Playfair Display", serif; margin: 0 0 8px; }
+.collection-copy p { color: #58758c; font: 17px/1.35 "Playfair Display", serif; max-width: 260px; margin: 0 0 20px; }
+.collection-copy .pill-button { padding: 10px 18px; font-size: 13px; background: #d9effb; color: #45677f; }
+.collection-photo {
+  min-width: 0; width: 100%; height: 100%; min-height: 245px;
+  object-fit: cover; object-position: center 38%;
+  clip-path: polygon(8% 0, 100% 0, 100% 100%, 0 100%);
+  transition: transform .6s;
+}
+.collection-card:hover .collection-photo { transform: scale(1.035); }
+.collection-card:nth-child(even) { grid-template-columns: 63% 37%; }
+.collection-card:nth-child(even) .collection-photo { grid-column: 1; grid-row: 1; clip-path: polygon(0 0, 92% 0, 100% 100%, 0 100%); }
+.collection-card:nth-child(even) .collection-copy { grid-column: 2; grid-row: 1; padding: 30px 25px; }
+.letter-section {
+  margin: 25px 5.5% 45px; min-height: 190px; padding: 30px 5%;
+  display: grid; grid-template-columns: 1fr 1.3fr 1fr; align-items: center;
+  text-align: center; overflow: hidden; position: relative;
+  border-radius: 28px; border: 1px solid #d9ebf7;
+  background: linear-gradient(110deg, #eaf6fd, #f5fbff 55%, #e0f1fb);
+}
+.letter-copy { position: relative; z-index: 1; }
+.letter-copy h2 { font-size: 36px; }
+.letter-copy p:not(.eyebrow) { font: 17px "Playfair Display", serif; margin: 7px 0 16px; }
+.letter-art { display: flex; justify-content: center; }
+.envelope {
+  width: 135px; height: 90px; position: relative; display: grid; place-items: center;
+  background: linear-gradient(145deg, #d9effb, #b9def3);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  box-shadow: 0 8px 18px #9cc8e4;
+}
+.envelope:before { content: ""; position: absolute; inset: 0; background: #eaf6fd; clip-path: polygon(0 0, 50% 55%, 100% 0); }
+.envelope span { position: relative; z-index: 1; color: #82bce0; font-size: 24px; margin-top: 10px; }
+.letter-flowers { font-size: 100px; color: #9bc9e8; opacity: .55; }
+.site-footer { display: flex; justify-content: center; align-items: center; gap: 28px; padding: 0 20px 35px; color: #789db7; font: 16px "Playfair Display", serif; }
+.site-footer > p {white-space: nowrap;}
+.site-footer span { height: 1px; width: 120px; background: #c3e0f2; }
+.site-footer b { color: var(--pink-dark); }
+.viewer, .letter-modal {
+  position: fixed; inset: 0; z-index: 20; display: none; align-items: center; justify-content: center;
+  background: rgba(37, 22, 28, .92); padding: 30px;
+}
+.viewer.open, .letter-modal.open { display: flex; }
+.viewer figure { margin: 0; max-width: min(900px, 82vw); max-height: 88vh; text-align: center; }
+.viewer figure img { display: block; max-width: 100%; max-height: 78vh; object-fit: contain; border-radius: 5px; }
+.viewer figcaption { display: flex; justify-content: space-between; color: white; padding-top: 12px; font-size: 13px; }
+.viewer button, .letter-close { border: 0; cursor: pointer; }
+.viewer-close { position: absolute; top: 20px; right: 30px; color: white; background: none; font-size: 42px; }
+.viewer-prev, .viewer-next { color: white; background: none; font-size: 55px; padding: 20px; }
+.letter-modal { background: rgba(76, 43, 53, .55); }
+.letter-paper { position: relative; max-width: 570px; max-height: 600px; overflow: auto; width: 100%; padding: 55px; background: #fff9f8; border-radius: 5px; box-shadow: 0 20px 80px #263f5555; }
+.letter-paper h2 { font: 500 35px "Playfair Display", serif; margin: 16px 0; }
+.letter-placeholder { color: #617b90; line-height: 1.9; }
+.signature { font: 24px "Caveat", cursive; color: var(--pink-dark); margin-top: 28px; }
+.letter-close { position: absolute; right: 18px; top: 12px; background: none; font-size: 30px; color: var(--ink); }
+
+@media (max-width: 700px) {
+  .site-header { height: 68px; padding: 0 6%; }
+  .brand { font-size: 23px; }
+  nav { display: none; position: absolute; top: 62px; right: 6%; flex-direction: column; gap: 15px; padding: 18px 22px; background: #f8fcff; border-radius: 15px; box-shadow: 0 8px 25px #45677f20; }
+  nav.open { display: flex; }
+  .menu-toggle { display: block; }
+  .hero { min-height: 700px; align-items: flex-start; padding: 145px 7% 50px; }
+  .hero-copy { max-width: 100%; }
+  .hero h1 { font-size: 54px; }
+  .hero-description { font-size: 18px; }
+  .hero-photo-wrap { inset: 340px 0 0 0; opacity: .72; mask-image: linear-gradient(180deg, transparent 0%, black 18%); }
+  .doodle-one { top: 28%; left: 80%; }
+  .doodle-two { top: 54%; right: 8%; }
+  .collections { padding: 65px 5% 35px; }
+  .section-intro { margin-bottom: 28px; }
+  .collection-card, .collection-card:nth-child(even) { display: flex; flex-direction: column; min-height: auto; }
+  .collection-copy, .collection-card:nth-child(even) .collection-copy { order: 2; padding: 23px 24px 25px; }
+  .collection-photo, .collection-card:nth-child(even) .collection-photo { order: 1; height: 230px; min-height: 230px; clip-path: none; }
+  .collection-copy h3 { font-size: 29px; }
+  .letter-section { margin: 20px 5% 35px; padding: 28px 20px; grid-template-columns: 1fr; gap: 12px; }
+  .letter-art, .letter-flowers { display: none; }
+  .letter-paper { padding: 42px 27px; }
+  .viewer { padding: 12px; }
+  .viewer figure { max-width: 88vw; }
+  .viewer-prev, .viewer-next { position: absolute; bottom: 12px; font-size: 38px; }
+  .viewer-prev { left: 20%; } .viewer-next { right: 20%; }
+}

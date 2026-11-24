@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8dfe4">
+  <title>A Little Gallery of You ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Caveat:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home">A Little Gallery of You <span>♡</span></a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">MADE WITH DHER SARA LOVE</p>
+        <h1>HELLOW, MY BABYY <span>♡</span></h1>
+        <p class="hero-description">A collection of my favorite moments<br class="desktop-break"> with you.</p>
+        <a class="pill-button" href="#collections">Explore Gallery <span>↓</span></a>
+      </div>
+      <div class="hero-photo-wrap">
+        <img class="hero-photo" src="IMG_20261013_202009_879.jpg"A favorite photo" onerror="this.src='images/placeholder.svg'">
+      </div>
+      <span class="doodle doodle-one">♡</span>
+      <span class="doodle doodle-two">♡</span>
+      <span class="doodle doodle-three">♡</span>
+    </section>
+
+    <section class="collections" id="collections">
+      <div class="section-intro">
+        <p class="eyebrow">I LOVE YOU MY BABY</p>
+        <h2>MY PICKS, <i>BABY.</i></h2>
+        <p>Every photo has a place here. Pick a collection and take your time.</p>
+      </div>
+      <div id="collection-list" class="collection-list"></div>
+    </section>
+
+    <section class="letter-section" id="letter">
+      <div class="letter-art" aria-hidden="true">
+        <div class="envelope"><span>♥</span></div>
+      </div>
+      <div class="letter-copy">
+        <p class="eyebrow">SAVED FOR LAST</p>
+        <h2>One Last Thing...</h2>
+        <p>A little letter for you.</p>
+        <button class="pill-button" id="open-letter">Read My Letter <span>♡</span></button>
+      </div>
+      <div class="letter-flowers" aria-hidden="true">✿</div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span></span>
+    <p>Forever yours <b>♡</b></p>
+    <span></span>
+  </footer>
+
+  <div class="viewer" id="viewer" aria-hidden="true">
+    <button class="viewer-close" aria-label="Close photo viewer">×</button>
+    <button class="viewer-prev" aria-label="Previous photo">‹</button>
+    <figure>
+      <img id="viewer-image" src="" alt="">
+      <figcaption><span id="viewer-caption"></span><span id="viewer-count"></span></figcaption>
+    </figure>
+    <button class="viewer-next" aria-label="Next photo">›</button>
+  </div>
+
+  <div class="letter-modal" id="letter-modal" aria-hidden="true">
+    <div class="letter-paper">
+      <button class="letter-close" aria-label="Close letter">×</button>
+      <p class="eyebrow">A NOTE FOR YOU</p>
+      <h2>To my favourite person,</h2>
+      <p class="letter-placeholder">Babyyyyyy I love you so much, you're everything my love, my baby, my BEST FRIEND yk everything and I know sometimes I just lose my temper and boht gussa krta hu I'm really sorry about that. I don't wanna live without you my baby and even the thought of living without you makes me sad. 1 year back we were strangers but now I don't even wanna think about my future if you're not in it I'll never stop loving you baby. <br> I changes alot because of you I never thought I'll care this much about someone 24/7 all I think about is you baby, how you're feeling  etc I don't wanna see my baby sad I love you idk how to end this so after you're done reading this letter tell me things I need to change about myself ATLEAST 3 things and be honest</p>
+      <br>LOVEEEEEEE YOUUUU BYEEEEEEEE MY LOVEEEEEEE
+      <p class="signature">Aapka pyara arpittttttt 🥰🥰🥰🥰</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -27,7 +27,7 @@ const collections = [
   {
     id: "favourites",
     title: "My Favourite",
-    description: "The ones I could look at forever. ♡",
+    description: "OFCCC MY FAVVV ♡",
     folder: "images/favourites",
     count: 20,
     cover: "images/favourites/01.jpg"
@@ -234,3 +234,16 @@ if (menuToggle && nav) {
     });
   });
 }
+
+
+
+// Open website at the home section on initial load
+if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+}
+
+window.addEventListener("load", () => {
+    if (!window.location.hash) {
+        window.scrollTo(0, 0);
+    }
+});
